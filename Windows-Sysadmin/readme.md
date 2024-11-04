@@ -16,7 +16,7 @@ In this task, you investigated LLMNR vulnerabilities and mitigated the risks by 
    - Enable the policy named **Turn Off Multicast Name Resolution**.
 4. **Link GPO to GC Computers OU**: Link the **No LLMNR** GPO to the **GC Computers** OU.
 
-5. <img src="[https://github.com/user/repo/blob/main/output.jpg](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/Windows-Sysadmin/Step%201.png)" align="center" height="350" width="600"/>
+<img src="[https://github.com/user/repo/blob/main/output.jpg](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/Windows-Sysadmin/Step%201.png)" align="center" height="350" width="600"/>
 
 ---
 
