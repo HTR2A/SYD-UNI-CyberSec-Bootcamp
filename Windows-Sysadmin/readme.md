@@ -73,9 +73,7 @@ foreach ($item in $directory) {
     Get-Acl $item.FullName
 }
 ```
-
-![Uploading enum_acls ps1.png…]()
-
+![enum_acls ps1](https://github.com/user-attachments/assets/dea777e1-9a5c-4d93-ba89-6c605d416767)
 
 - **Script Location**: The script was saved at `C:\Users\sysadmin\Documents\enum_acls.ps1`.
 - **Execution Example**:
@@ -107,6 +105,5 @@ After configuring the PowerShell logging GPO, the next step was to verify if the
 
 ---
 
-This completes the day-to-day tasks, providing an overview of Group Policy creation and verification processes, as well as PowerShell scripting to ensure security and compliance. Let me know if you need any additional edits or further details on any specific tasks!
 
 
