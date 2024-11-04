@@ -100,9 +100,6 @@ After configuring the PowerShell logging GPO, the next step was to verify if the
    - Navigate to `C:\Users\sysadmin\Documents`.
    - Locate the transcription logs, stored in a folder with the current date.
 
-**Issues Encountered**:
-- The `gpupdate` command displayed errors related to **Name Resolution Failure** and **Active Directory Replication Latency**. These may be related to domain replication issues or network configuration problems.
-
 ---
 
 
