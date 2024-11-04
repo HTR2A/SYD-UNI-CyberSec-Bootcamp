@@ -34,6 +34,8 @@ To prevent brute-force attacks on Windows workstations, an account lockout polic
      - **Reset account lockout counter after**: 15 minutes.
 3. **Link GPO to GC Computers OU**: Link the **Account Lockout** GPO to the **GC Computers** OU.
 
+![GPM - Lockout](https://github.com/user-attachments/assets/676e44c1-ee98-4c97-b7ba-6fe577b4f43c)
+
 ---
 
 ## Task 3: Create a GPO—Enabling Verbose PowerShell Logging and Transcription
@@ -50,6 +52,8 @@ PowerShell is a common tool for attackers. To enhance visibility and improve mon
      - **Turn on PowerShell Script Block Logging**: Logs script blocks for better monitoring.
      - **Turn on PowerShell Transcription**: Enabled, with the **Include invocation headers** option checked.
 3. **Link GPO to GC Computers OU**: Link the **PowerShell Logging** GPO to the **GC Computers** OU.
+
+![Windows-PowerShell-Policies](https://github.com/user-attachments/assets/4d259108-0cbd-4a5b-85c0-b4f3ae262b45)
 
 ---
 
@@ -69,6 +73,10 @@ foreach ($item in $directory) {
     Get-Acl $item.FullName
 }
 ```
+
+![Uploading enum_acls ps1.png…]()
+
+
 - **Script Location**: The script was saved at `C:\Users\sysadmin\Documents\enum_acls.ps1`.
 - **Execution Example**:
   - Open a PowerShell window.
