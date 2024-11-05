@@ -175,6 +175,7 @@ Use `steghide` with the passphrase to extract the hidden text from `mary-lamb.jp
 The hidden message inside the file is **mcclane**.
 
 ![mary-lamb](https://github.com/user-attachments/assets/3f3b3915-87d8-4847-aafb-e3143b277b13)
+<img width="1154" alt="Screenshot 2024-11-05 at 15 39 28" src="https://github.com/user-attachments/assets/de0e0ad6-6381-47a6-a10a-ac966d5e8449">
 
 
 ---
