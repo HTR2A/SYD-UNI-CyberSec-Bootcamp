@@ -11,7 +11,6 @@ To organize the investigation, the following directories were created:
     - **Dealer_Analysis**: Analyzed dealer activities.
     - **Player_Dealer_Correlation**: Summarized findings about possible collusion.
 
-Empty note files were also created in each directory to document findings.
 
 ---
 
