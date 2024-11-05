@@ -157,5 +157,8 @@
 
 - **Verification**: Follow the instructions provided in the message to complete the mission.
 
+<img width="622" alt="Screenshot 2024-11-05 at 15 19 24" src="https://github.com/user-attachments/assets/5d191dbf-9109-46d2-91d0-efcadbd29f06">
+
+
 ---
 
