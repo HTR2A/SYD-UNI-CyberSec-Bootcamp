@@ -1,7 +1,4 @@
-# Linux SysAdmin Fundamentals Assignment
-
-## Overview
-This assignment focuses on the fundamental skills required for a Linux Systems Administrator. The objective was to troubleshoot a Linux server and prepare a replacement server by ensuring correct permissions, creating user accounts, configuring group settings, and performing a system audit.
+# Linux SysAdmin Fundamentals
 
 ---
 
