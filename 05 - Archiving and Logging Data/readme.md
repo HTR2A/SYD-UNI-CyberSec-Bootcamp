@@ -1,7 +1,7 @@
-# Linux SysAdmin Fundamentals Assignment
+# Archiving and Logging Data Assignment
 
 ## Overview
-This assignment focuses on the fundamental skills required for a Linux Systems Administrator. The objective was to troubleshoot a Linux server and prepare a replacement server by ensuring correct permissions, creating user accounts, configuring group settings, and performing a system audit.
+This assignment focuses on archiving and logging data, ensuring correct permissions, creating user accounts, configuring group settings, and performing system audits. It also includes creating and managing backups, writing scripts for system resource usage reports, performing log filtering, and managing log file sizes using tools like `tar`, `cron`, `logrotate`, and `auditd`.
 
 ---
 
