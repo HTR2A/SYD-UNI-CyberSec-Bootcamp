@@ -121,6 +121,9 @@
 
 **Verification**: Ensure that Planet N is not included in the route to optimize traffic.
 
+<img width="864" alt="Galaxy_Network_map" src="https://github.com/user-attachments/assets/3690441c-f9ba-43a7-b75e-8a5df9b50d37">
+
+
 ---
 
 ### Mission 6: Decrypting Dark Side Wireless Traffic
