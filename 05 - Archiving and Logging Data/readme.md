@@ -1,45 +1,5 @@
-## Module 5 Challenge
+## Module 5 **Archiving and Logging Data**
 
-**Archiving and Logging Data**
-
-This Challenge assignment is designed to solidify and demonstrate knowledge of the following concepts and tools:
-
-- Creating a tar archive that excludes a directory using the `--exclude=` command option.
-- Managing backups using cronjobs.
-- Writing Bash scripts to create system resource usage reports.
-- Performing log filtering using `journalctl`.
-- Managing log file sizes using `logrotate`.
-- Creating an auditing system to check for policy and file violations using `auditd`.
-
-### Scenario
-For this assignment, you will play the role of a security analyst at Credico Inc., a financial institution that offers checking, savings, and investment banking services.
-
-The company collects, processes, and maintains a large database of private financial information for both consumer and business accounts. The data is maintained on a local server.
-
-The company must comply with the Federal Trade Commission's Gramm-Leach-Bliley Act (GLBA), which requires that financial institutions explain their information-sharing practices to their customers and protect sensitive data.
-
-In an effort to mitigate network attacks and meet federal compliance, Credico Inc. developed an efficient log management program that performs:
-
-- Log size management using `logrotate`.
-- Log auditing with `auditd` to track events, record the events, detect abuse or unauthorized activity, and create custom reports.
-
-These tools, in addition to archives, backups, scripting, and task automation, contribute to a fully comprehensive log management system.
-
-You will expand and enhance this log management system by learning new tools, adding advanced features, and researching additional concepts.
-
-### Lab Environment
-To set up your lab environment with the necessary files, complete the following steps:
-
-1. Log into your web lab machine.
-2. Create a directory called **Projects** in your `/home/sysadmin/` directory.
-3. Download the following file (you can either slack it to yourself or use the Firefox browser in your Ubuntu machine), and move it to your `~/Projects` directory before you get started:
-
-   **TarDocs.tar**
-
-### Instructions
-In each of the following sections, you will use and build on your system administration tools and knowledge. Make sure to read the instructions carefully. As you complete each step, make sure to take notes as you will use it to answer the questions in this quiz.
-
-**IMPORTANT:** Please review your answers carefully before submitting to ensure that they are free of spelling and spacing errors. Incorrect spelling or incorrect spacing syntax will be marked as incorrect answers.
 
 ### Step 1: Create, Extract, Compress, and Manage tar Backup Archives
 Creating tar archives is something you must do every day in your role at Credico Inc. In this section, you will extract and exclude specific files and directories to help speed up your workflow.
