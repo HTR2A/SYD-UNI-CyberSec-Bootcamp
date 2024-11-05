@@ -1,10 +1,8 @@
 ## Module 5 Challenge
-**Started:** 23 Jun at 10:27  
 
-### Quiz Instructions
 **Archiving and Logging Data**
 
-This Challenge assignment is designed to solidify and demonstrate your knowledge of the following concepts and tools:
+This Challenge assignment is designed to solidify and demonstrate knowledge of the following concepts and tools:
 
 - Creating a tar archive that excludes a directory using the `--exclude=` command option.
 - Managing backups using cronjobs.
