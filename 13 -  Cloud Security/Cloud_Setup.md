@@ -13,10 +13,12 @@ The first step was to create a resource group using the Azure portal. This resou
 - Choose a name for the resource group, ensuring it’s easily identifiable, and select a specific region.
 
 *Insert Image Here*: **Screenshot of the resource group creation screen, showing the selected region and group name.**
-![Create resource group](https://github.com/user-attachments/assets/ed5fcc78-86be-4356-b9a0-c2ed92483d76)
+![Create resource group](https://github.com/user-attachments/assets/5c5095a5-0fac-48ae-ba27-f261383b985f)
+
 
 ### 2. Creating the Virtual Network (VNet)
-![Create virtual network_1](https://github.com/user-attachments/assets/0e062365-2aac-4f26-a67d-ea08b2b04362)
+![Create virtual network_1](https://github.com/user-attachments/assets/ecd13b65-4704-4d04-876a-ca447ba4c83e)
+
 
 With the resource group in place, I set up the Virtual Network (VNet). The VNet serves as the foundation for deploying virtual machines and other services.
 
