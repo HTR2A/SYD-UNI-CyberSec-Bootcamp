@@ -145,7 +145,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   - This command downloaded the "cyberxsecurity/ansible" container from Docker Hub.
 
 *Insert Image Here*: **Screenshot of the terminal showing the Docker image pull process.**
-<img width="1392" alt="Docker_Process" src="https://github.com/user-attachments/assets/ccb1f1be-3e98-45e3-9460-6501279f0ae8">
+<img width="1392" alt="Docker_Process" src="https://github.com/user-attachments/assets/b2cbfdff-e4be-4c74-89c1-da23496dcd94">
 <img width="857" alt="Docker_Pull" src="https://github.com/user-attachments/assets/ffc52ba4-10da-44e1-a076-a3c30f82c133">
 
 
