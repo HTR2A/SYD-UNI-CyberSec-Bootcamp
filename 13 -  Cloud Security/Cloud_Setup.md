@@ -106,6 +106,7 @@ To ensure secure management of the cloud environment, I added a rule to the Netw
 - **Inbound Security Rule**: Configured to allow SSH traffic from my IP address only, using port 22 and TCP protocol.
 
 *Insert Image Here*: **Screenshot of the inbound security rule for SSH access, highlighting the source as "My IP" and the destination port as 22.**
+
 <img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
 
 ### 6 Detailed Docker Container Setup
