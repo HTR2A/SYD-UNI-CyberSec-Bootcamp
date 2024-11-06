@@ -156,7 +156,8 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   - The `-ti` flag allowed me to open an interactive terminal to work inside the container.
 
 *Insert Image Here*: **Screenshot showing the running Docker container with an interactive terminal session.**
-<img width="1162" alt="Container_Connected" src="https://github.com/user-attachments/assets/4d090176-520b-47f1-a56a-9dc63df3856d">
+<img width="1162" alt="Container_Connected" src="https://github.com/user-attachments/assets/fe36363b-2b5a-4a3a-874a-1ff80f6b98ca">
+
 
 
 - **Setting Up Security Group Rules**: To allow the Jump Box to interact with the virtual network securely, I configured the Network Security Group (NSG) to enable SSH access from the Jump Box to other resources in the VNet:
