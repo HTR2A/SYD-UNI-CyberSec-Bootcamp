@@ -1,5 +1,7 @@
 # Cybersecurity Bootcamp - Module 12: Web Development Quiz
 
+## In this Challenge, I reviewed many of the concepts and tools that I learned in the Web Development module.
+
 ## Quiz Questions and Answers
 
 ### Question 1
