@@ -2,8 +2,6 @@
 
 ## In this Challenge, I reviewed many of the concepts and tools that I learned in the Web Development module.
 
-## Quiz Questions and Answers
-
 ### Question 1
 
 **What type of architecture does the HTTP request and response process occur in?**
