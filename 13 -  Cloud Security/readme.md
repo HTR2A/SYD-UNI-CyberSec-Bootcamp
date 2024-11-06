@@ -27,9 +27,9 @@ My diagram includes the following components:
 - All four VMs that I launched
 - Locations where Docker and Ansible are deployed
 
+![Module 13](https://github.com/user-attachments/assets/4f1994f7-ac7d-407d-83ce-edac9b9a27a2)
 
 
-![Module 13](https://github.com/user-attachments/assets/429b4d32-37c1-4ce4-9d16-17c302e52263)
 
 
 
