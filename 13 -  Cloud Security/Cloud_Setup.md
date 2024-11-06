@@ -14,7 +14,6 @@ The first step was to create a resource group using the Azure portal. This resou
 
 *Insert Image Here*: **Screenshot of the resource group creation screen, showing the selected region and group name.**
 ![Create resource group](https://github.com/user-attachments/assets/ed5fcc78-86be-4356-b9a0-c2ed92483d76)
-<img width="793" alt="vNet1" src="https://github.com/user-attachments/assets/ed5fcc78-86be-4356-b9a0-c2ed92483d76">
 
 ### 2. Creating the Virtual Network (VNet)
 ![Create virtual network_1](https://github.com/user-attachments/assets/0e062365-2aac-4f26-a67d-ea08b2b04362)
@@ -43,6 +42,9 @@ The Network Security Group (NSG) was set up to manage the flow of network traffi
 - Configured **inbound security rules** to block all traffic initially, then added specific rules for allowing certain types of traffic, such as SSH.
 
 *Insert Image Here*: **Screenshot of the Network Security Group with inbound rules settings, highlighting the "Default-Deny" rule.**
+![inbound_rules](https://github.com/user-attachments/assets/c37d62d7-d0fd-4437-87fd-d13914a50dd8)
+![inbound_rules_2](https://github.com/user-attachments/assets/c577a374-29df-4dee-b808-6cceb6707462)
+
 
 ### 4. Launching the Virtual Machines
 
