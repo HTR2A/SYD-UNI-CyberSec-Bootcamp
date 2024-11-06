@@ -135,7 +135,8 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
     ```
 
 *Insert Image Here*: **Screenshot showing Docker installation and service status on the Jump Box.**
-<img width="972" alt="Docker_Install" src="https://github.com/user-attachments/assets/2635a39a-ffd9-472d-9dfe-6fa9bcca91c1">
+<img width="972" alt="Docker_Install" src="https://github.com/user-attachments/assets/5bf576fe-f90f-44be-91ec-3e95057c9d89">
+
 
 
 - **Pull Docker Image**: With Docker running, I pulled the required container image:
