@@ -28,7 +28,8 @@ My diagram includes the following components:
 - Locations where Docker and Ansible are deployed
 
 
-![Module 13](https://github.com/user-attachments/assets/f7e9e1a8-1fbf-42aa-af9c-2a636080700b)
+
+![Module 13](https://github.com/user-attachments/assets/429b4d32-37c1-4ce4-9d16-17c302e52263)
 
 
 
