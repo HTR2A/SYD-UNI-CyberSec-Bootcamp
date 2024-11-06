@@ -12,7 +12,6 @@ The first step was to create a resource group using the Azure portal. This resou
 - Click on the **"+ Add"** or **"Create resource group"** button.
 - Choose a name for the resource group, ensuring it’s easily identifiable, and select a specific region.
 
-*Insert Image Here*: **Screenshot of the resource group creation screen, showing the selected region and group name.**
 ![Create resource group](https://github.com/user-attachments/assets/5c5095a5-0fac-48ae-ba27-f261383b985f)
 
 
@@ -27,7 +26,6 @@ With the resource group in place, I set up the Virtual Network (VNet). The VNet 
 - I filled in the network settings, including selecting the resource group I created earlier, naming the VNet, and specifying the same region as the resource group.
 - Used default settings for **IP addresses** and **Security**, but ensured that **DDoS Protection Standard** was disabled to avoid unnecessary costs.
 
-*Insert Image Here*: **Screenshot of the Virtual Network settings, including the IP address configuration and region selection.**
 <img width="793" alt="vNet1" src="https://github.com/user-attachments/assets/5fc4da67-023a-4251-b86b-918127ae2f82">
 <img width="773" alt="vNet2" src="https://github.com/user-attachments/assets/08ce309f-e603-4577-bfe8-7ed27c9f6468">
 <img width="856" alt="vNet3" src="https://github.com/user-attachments/assets/fca4d5f9-f80f-4b60-af0b-d3c1d3e0e8e6">
@@ -43,9 +41,8 @@ The Network Security Group (NSG) was set up to manage the flow of network traffi
 - Add the NSG to my resource group and provide it with a recognizable name.
 - Configured **inbound security rules** to block all traffic initially, then added specific rules for allowing certain types of traffic, such as SSH.
 
-*Insert Image Here*: **Screenshot of the Network Security Group with inbound rules settings, highlighting the "Default-Deny" rule.**
-![inbound_rules](https://github.com/user-attachments/assets/c37d62d7-d0fd-4437-87fd-d13914a50dd8)
-![inbound_rules_2](https://github.com/user-attachments/assets/c577a374-29df-4dee-b808-6cceb6707462)
+![inbound_rules](https://github.com/user-attachments/assets/dff73cb6-4513-47a4-93b5-122aff7d6c8b)
+![inbound_rules_2](https://github.com/user-attachments/assets/959525c6-0226-4beb-ac72-d740ef4ab8cd)
 
 
 ### 4. Launching the Virtual Machines
@@ -56,13 +53,51 @@ Next, I created the virtual machines (VMs) that are essential for the project:
   - **Virtual network**: Selected the previously created VNet.
   - **Security group**: Linked to the NSG to apply security policies.
   - **SSH Authentication**: Generated an SSH key and used it for secure access.
+```
+m3air@Jasons-Air ~ % ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/cyber/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in id_rsa.
+Your public key has been saved in id_rsa.pub.
+The key fingerprint is:
+SHA256:r3aBFU50/5iQbbzhqXY+fOIfivRFdMFt37AvLJifC/0 cyber@2Us-MacBook-Pro.local
+The randomart image is:
++---[RSA 2048]----+
+|         .. . ...|
+|          o. =..+|
+|         o .o *=+|
+|          o  +oB+|
+|        So o .*o.|
+|        ..+...+ .|
+|          o+++.+ |
+|        ..oo=+* o|
+|       ... ..=E=.|
++----[SHA256]-----+
+```
 
-*Insert Image Here*: **Screenshot of the Jump Box creation screen, showing the SSH key setup and network settings.**
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+```
+m3air@Jasons-Air ~ % cat ~/.ssh/id_rsa.pub 
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGG6dBJ6ibhgM09U+kn/5NE7cGc4CNHWXein0f+MciKElDalf76nVgFvJQEIImMhAGrtRRJDAd6itlPyBpurSyNOByU6LX7Gl6DfGQKzQns6+n9BheiVLLY9dtodp8oAXdVEGles5EslflPrTrjijVZa9lxGe34DtrjijExWM6hBb0KvwlkU4worPblINx+ghDv+3pdrkUXMsQAht/fLdtP/EBwgSXKYCu/
+
+```
+
+<img width="816" alt="Jump_box-VM" src="https://github.com/user-attachments/assets/595ffb43-8e90-4ac2-b186-1d7f23a4366a">
+<img width="1252" alt="CreateVM-b" src="https://github.com/user-attachments/assets/24b52a09-1dae-4b27-8ae2-eadec368c8d3">
+
+
 
 - **Web VMs (VM2 and VM3)**: I also deployed two additional VMs named "Web-1" and "Web-2," both linked to the same resource group and VNet as the Jump Box.
   - These web VMs were configured without public IPs, ensuring that they are only accessible from within the network.
 
-*Insert Image Here*: **Screenshot of the Web VM networking tab, showing the subnet and the absence of a public IP address.**
+<img width="806" alt="WebVMNetworking" src="https://github.com/user-attachments/assets/3da6aba7-769b-4cda-b736-2d1f995d5ee0">
+
 
 ### 5. Adding Security Group Rules for the Jump Box
 
@@ -71,10 +106,80 @@ To ensure secure management of the cloud environment, I added a rule to the Netw
 - **Inbound Security Rule**: Configured to allow SSH traffic from my IP address only, using port 22 and TCP protocol.
 
 *Insert Image Here*: **Screenshot of the inbound security rule for SSH access, highlighting the source as "My IP" and the destination port as 22.**
+<img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
 
-### 6. Summary
+### 6 Detailed Docker Container Setup
 
-This cloud environment setup involved configuring foundational cloud elements, including a resource group, virtual network, security group, and virtual machines. Each step was carefully executed to ensure high availability, security, and cost-effectiveness.
+After initial configuration, I proceeded with setting up Docker on the Jump Box to manage containers effectively. Here is how I did it:
 
-*Insert Image Here*: **Final overview of the resource group showing all configured resources (resource group, VNet, NSG, and VMs).**
+- **SSH into the Jump Box**: First, I opened my terminal and used SSH to connect to the Jump Box:
+  ```
+  ssh admin@jump-box-ip
+  ```
+- **Update Machine**: Once connected, I ran the following command to update the Jump Box:
+  ```
+  sudo apt-get update
+  ```
+- **Install Docker**: Next, I installed Docker using the command:
+  ```
+  sudo apt install docker.io
+  ```
+- **Check Docker Service**: To confirm Docker was installed and running properly, I used:
+  ```
+  sudo systemctl status docker
+  ```
+  - If the service was not running, I started it with:
+    ```
+    sudo systemctl start docker
+    ```
+
+*Insert Image Here*: **Screenshot showing Docker installation and service status on the Jump Box.**
+<img width="972" alt="Docker_Install" src="https://github.com/user-attachments/assets/2635a39a-ffd9-472d-9dfe-6fa9bcca91c1">
+
+
+- **Pull Docker Image**: With Docker running, I pulled the required container image:
+  ```
+  sudo docker pull cyberxsecurity/ansible
+  ```
+  - This command downloaded the "cyberxsecurity/ansible" container from Docker Hub.
+
+*Insert Image Here*: **Screenshot of the terminal showing the Docker image pull process.**
+<img width="1392" alt="Docker_Process" src="https://github.com/user-attachments/assets/ccb1f1be-3e98-45e3-9460-6501279f0ae8">
+<img width="857" alt="Docker_Pull" src="https://github.com/user-attachments/assets/ffc52ba4-10da-44e1-a076-a3c30f82c133">
+
+
+- **Run the Docker Container**: Finally, I launched the Ansible container interactively:
+  ```
+  sudo docker run -ti cyberxsecurity/ansible bash
+  ```
+  - The `-ti` flag allowed me to open an interactive terminal to work inside the container.
+
+*Insert Image Here*: **Screenshot showing the running Docker container with an interactive terminal session.**
+<img width="1162" alt="Container_Connected" src="https://github.com/user-attachments/assets/4d090176-520b-47f1-a56a-9dc63df3856d">
+
+
+- **Setting Up Security Group Rules**: To allow the Jump Box to interact with the virtual network securely, I configured the Network Security Group (NSG) to enable SSH access from the Jump Box to other resources in the VNet:
+  - **Source**: IP Addresses setting with the internal IP of the Jump Box.
+  - **Source port ranges**: Set to `*`.
+  - **Destination**: Set to VirtualNetwork.
+  - **Service**: Select SSH.
+  - **Destination port ranges**: Port `22`.
+  - **Action**: Allow traffic.
+  - **Priority**: Set to a lower number to ensure the rule has precedence.
+
+*Insert Image Here*: **Screenshot of the Network Security Group settings, showing the SSH rule added for the Jump Box.**
+<img width="1349" alt="VM_IP_Address" src="https://github.com/user-attachments/assets/7e894409-b4f1-41ed-b6de-3572814e6783">
+<img width="209" alt="JumpBox_settings1" src="https://github.com/user-attachments/assets/09457d2c-7c7f-4784-b575-229d31728114">
+
+
+
+
+
+
+
+
+
+
+
+
 
