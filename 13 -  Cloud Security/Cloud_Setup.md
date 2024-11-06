@@ -11,9 +11,12 @@ The first step was to create a resource group using the Azure portal. This resou
 - **Search for "resource"** in the Azure portal home screen.
 - Click on the **"+ Add"** or **"Create resource group"** button.
 - Choose a name for the resource group, ensuring it’s easily identifiable, and select a specific region.
-![Create virtual network_2](https://github.com/user-attachments/assets/dc3fc93a-fd6b-4e24-805e-bfaea69a21d1)
-![Create virtual network_1](https://github.com/user-attachments/assets/a1938c65-c2d4-405a-9092-34bd076c7cbf)
+
+*Insert Image Here*: **Screenshot of the resource group creation screen, showing the selected region and group name.**
+![Create resource group](https://github.com/user-attachments/assets/ed5fcc78-86be-4356-b9a0-c2ed92483d76)
+
 ### 2. Creating the Virtual Network (VNet)
+![Create virtual network_1](https://github.com/user-attachments/assets/0e062365-2aac-4f26-a67d-ea08b2b04362)
 
 With the resource group in place, I set up the Virtual Network (VNet). The VNet serves as the foundation for deploying virtual machines and other services.
 
@@ -22,12 +25,12 @@ With the resource group in place, I set up the Virtual Network (VNet). The VNet 
 - I filled in the network settings, including selecting the resource group I created earlier, naming the VNet, and specifying the same region as the resource group.
 - Used default settings for **IP addresses** and **Security**, but ensured that **DDoS Protection Standard** was disabled to avoid unnecessary costs.
 
-<img width="793" alt="vNet1" src="https://github.com/user-attachments/assets/efc49a2e-5622-4ef3-9b35-87f36186866c">
-<img width="773" alt="vNet2" src="https://github.com/user-attachments/assets/b1dcfa6a-4160-4c8b-9b58-1c8e1962616b">
-<img width="856" alt="vNet3" src="https://github.com/user-attachments/assets/47b686ef-4224-4421-a659-954c2207529e">
-<img width="774" alt="vNet4" src="https://github.com/user-attachments/assets/d1cf08fa-ae7b-40be-8ede-b8b27d09402e">
-<img width="531" alt="vNet5" src="https://github.com/user-attachments/assets/17211f65-2029-476b-99a2-43869334debb">
-
+*Insert Image Here*: **Screenshot of the Virtual Network settings, including the IP address configuration and region selection.**
+<img width="793" alt="vNet1" src="https://github.com/user-attachments/assets/5fc4da67-023a-4251-b86b-918127ae2f82">
+<img width="773" alt="vNet2" src="https://github.com/user-attachments/assets/08ce309f-e603-4577-bfe8-7ed27c9f6468">
+<img width="856" alt="vNet3" src="https://github.com/user-attachments/assets/fca4d5f9-f80f-4b60-af0b-d3c1d3e0e8e6">
+<img width="774" alt="vNet4" src="https://github.com/user-attachments/assets/b15767db-8977-4032-9d0d-63be861ae593">
+<img width="531" alt="vNet5" src="https://github.com/user-attachments/assets/aff8aff3-68e9-42e9-9728-e51cea1d274b">
 
 
 ### 3. Configuring the Network Security Group (NSG)
