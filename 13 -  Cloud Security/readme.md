@@ -8,10 +8,13 @@ Over the last week, I created a highly available web server for XCorp's Red Team
 After completing all the cloud activities, I ended up with:
 
 - A total of two VMs running DVWA.
-- Both VMs receiving traffic from the load balancer.
+- Both VMs receiving traffic from my load balancer.
 
 ### My Goal
 My goal for this assignment was to create a network diagram that shows the entire cloud setup, including the Ansible jump box and the Docker containers running on each VM. This diagram can be used as part of my portfolio to demonstrate my cloud architecture capabilities.
+
+### Diagram Details
+I used a free account at draw.io to diagram the entire cloud network that I set up.
 
 My diagram includes the following components:
 
@@ -21,7 +24,11 @@ My diagram includes the following components:
 - Flow of specific traffic (e.g., HTTP, SSH)
 - Security group blocking traffic
 - Load balancer
-- Two VMs that I launched
+- All four VMs that I launched
 - Locations where Docker and Ansible are deployed
+
+
+![Module 13](https://github.com/user-attachments/assets/f7e9e1a8-1fbf-42aa-af9c-2a636080700b)
+
 
 
