@@ -1,10 +1,8 @@
 # Module 13 - Cloud Environment Setup
 
-## Overview
-
 This document details the setup of my cloud network environment, focusing on creating a virtual network, configuring security groups, and launching virtual machines. I'll describe each step I followed.
 
-### 1. Setting Up the Resource Group
+## 1. Setting Up the Resource Group
 
 The first step was to create a resource group using the Azure portal. This resource group is essentially the container that holds all the cloud resources needed for the project. I used the following procedure:
 
@@ -14,7 +12,7 @@ The first step was to create a resource group using the Azure portal. This resou
 
 ![Create resource group](https://github.com/user-attachments/assets/5c5095a5-0fac-48ae-ba27-f261383b985f)
 
-### 2. Creating the Virtual Network (VNet)
+## 2. Creating the Virtual Network (VNet)
 ![Create virtual network_1](https://github.com/user-attachments/assets/ecd13b65-4704-4d04-876a-ca447ba4c83e)
 
 
@@ -32,7 +30,7 @@ With the resource group in place, I set up the Virtual Network (VNet). The VNet 
 <img width="531" alt="vNet5" src="https://github.com/user-attachments/assets/aff8aff3-68e9-42e9-9728-e51cea1d274b">
 
 
-### 3. Configuring the Network Security Group (NSG)
+## 3. Configuring the Network Security Group (NSG)
 
 The Network Security Group (NSG) was set up to manage the flow of network traffic, enhancing the security of the environment.
 
@@ -44,7 +42,7 @@ The Network Security Group (NSG) was set up to manage the flow of network traffi
 ![inbound_rules_2](https://github.com/user-attachments/assets/959525c6-0226-4beb-ac72-d740ef4ab8cd)
 
 
-### 4. Launching the Virtual Machines
+## 4. Launching the Virtual Machines
 
 Next, I created the virtual machines (VMs) that are essential for the project:
 
@@ -158,7 +156,7 @@ The goal of this activity was to create a security group rule to allow SSH conne
 
 ### Note
 
-Please note that my public IP address will change depending on my location.
+My public IP address will change depending on my location.
 - In a normal work environment, I would set up a static IP address to avoid continually creating rules to allow access to my cloud machine.
 - In my case, I would need to create another security rule to allow my home network to access my Azure VM.
 
@@ -167,7 +165,7 @@ Please note that my public IP address will change depending on my location.
 ![password-reset](https://github.com/user-attachments/assets/0f09e0b4-22a5-44eb-93d8-d838d912f126)
 
 
-### 6. Docker Container Setup
+## 6. Docker Container Setup
 
 After initial configuration, I proceeded with setting up Docker on the Jump Box to manage containers effectively. Here is how I did it:
 
@@ -701,7 +699,7 @@ ansible@Pentest-1:~$ curl localhost/setup.php
 ```
 
 
-## 8. Load Balancer
+## 10. Load Balancer
 
 My task was to install a load balancer in front of the VM to distribute the traffic among more than one VM.
 
@@ -746,7 +744,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 ![HealthProbeSettings](https://github.com/user-attachments/assets/d81b0bb3-4ae8-49be-a13f-b912e9341940)
 
 
-## 10. Setting up NSG Rule for DVWA Webservers
+## 11. Setting up NSG Rule for DVWA Webservers
 
 
 
