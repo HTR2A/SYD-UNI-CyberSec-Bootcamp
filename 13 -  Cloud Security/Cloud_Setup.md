@@ -701,7 +701,7 @@ ansible@Pentest-1:~$ curl localhost/setup.php
 
 ## 10. Load Balancer
 
-My task was to install a load balancer in front of the VM to distribute the traffic among more than one VM.
+My task was to create a load balancer to distribute traffic across multiple VMs.
 
 <img width="1390" alt="LBSearch" src="https://github.com/user-attachments/assets/56028867-74da-48f0-b8be-aa08966c5585">
 
@@ -802,7 +802,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 
 ### Note
 
-With the stated configuration, I could only access these machines from the specified location. To access them from another location, I would need to update the security group rule.
+I could only access these machines from the specified location. To access them from another location, I would need to update the security group rule.
 
 # This completes my VM Environment
 
