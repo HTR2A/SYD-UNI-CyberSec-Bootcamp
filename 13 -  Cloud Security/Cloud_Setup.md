@@ -253,11 +253,12 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 - I located the newly created Web VM's details page.
 - I reset the SSH public key for the VM by pasting in the public key generated from the Ansible container.
 
+![reset-ssh](https://github.com/user-attachments/assets/15a66cc0-c63f-4707-aa90-396073456804)
+
 ### 5. Retrieve Internal IP Address
 
 - From the Azure portal, I retrieved the internal IP address of my VM.
 
-![reset-ssh](https://github.com/user-attachments/assets/15a66cc0-c63f-4707-aa90-396073456804)
 
 ### 6. Test SSH Connection to the VM
 
