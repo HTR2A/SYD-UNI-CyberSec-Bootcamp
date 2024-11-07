@@ -667,5 +667,66 @@ My task was to install a load balancer in front of the VM to distribute the traf
 ![HealthProbeSettings](https://github.com/user-attachments/assets/d81b0bb3-4ae8-49be-a13f-b912e9341940)
 
 
+## 10. Setting up NSG Rule for DVWA Webservers
+
+
+
+### 1. Create a Load Balancing Rule
+
+- I created a load balancing rule to forward port 80 from the load balancer to my Red Team VNet.
+- I provided the following configuration:
+  - **Name**: I gave the rule an appropriate name that I could recognize later.
+  - **IP Version**: Set to IPv4.
+  - **Frontend IP Address**: There was only one option, so I selected it.
+  - **Protocol**: Set to TCP for standard website traffic.
+  - **Port**: Set to 80.
+  - **Backend Port**: Set to 80.
+  - **Backend Pool and Health Probe**: I selected the backend pool and health probe that I had previously configured.
+  - **Session Persistence**: Changed to Client IP and protocol to ensure that users maintain the same session during their interactions.
+  - **Idle Timeout**: Left at the default value of 4 minutes.
+  - **Floating IP**: Left disabled.
+ 
+  ![LBR_rules](https://github.com/user-attachments/assets/a2cd6e8f-f6e9-443d-a520-bc54ab260d3c)
+
+
+### 2. Create a New Security Group Rule
+
+- I created a new security group rule to allow port 80 traffic from the internet to my internal VNet.
+- I used the following settings:
+  - **Source**: Changed to my external IPv4 address.
+  - **Source Port Ranges**: Set to "Any" to allow any source port, as they are chosen at random by the source computer.
+  - **Destination**: Set to "VirtualNetwork" to allow traffic to reach my Virtual Network.
+  - **Destination Port Ranges**: Set to 80 to only allow port 80 traffic.
+  - **Protocol**: Set to TCP.
+  - **Action**: Set to "Allow" to allow the traffic.
+  - **Name**: I chose an appropriate name that I could recognize later.
+ 
+
+![IP_LB_Inbound](https://github.com/user-attachments/assets/1b584468-7d6a-42b2-80ef-b7485062b132)
+
+  
+
+### 3. Remove Default Deny All Rule
+
+- I removed the security group rule that blocked all traffic on my VNet to allow traffic from my load balancer.
+- By removing the default deny-all rule, I allowed traffic from the load balancer to reach my VMs.
+
+
+
+
+
+### 4. Verify DVWA Access
+
+- I verified that I could reach the DVWA app from my browser over the internet.
+- I opened a web browser and entered the frontend IP address for my load balancer with `/setup.php` added to the IP address.
+  - For example: `http://40.122.71.120/setup.php`
+ 
+<img width="1135" alt="DVWA-Test" src="https://github.com/user-attachments/assets/a55bc6a8-f4f7-4c59-896a-c7519b03c36d">
+
+
+### Note
+
+With the stated configuration, I could only access these machines from the specified location. To access them from another location, I would need to update the security group rule.
+
 
 
