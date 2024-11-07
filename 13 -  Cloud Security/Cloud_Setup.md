@@ -511,7 +511,7 @@ My task was to create an Ansible playbook that installed Docker and configured a
 
 ### 3. Uninstall Apache
 
-- DVWA runs on port 80, so I needed to remove Apache if it was installed:
+- DVWA runs on port 80, so I needed to remove Apache:
   ```
   - name: Uninstall apache if needed
     ansible.builtin.apt:
