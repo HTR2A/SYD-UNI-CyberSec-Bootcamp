@@ -93,7 +93,11 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGG6dBJ6ibhgM09U+kn/5NE7cGc4CNHWXein0f+Mci
 
 
 - **Web VMs (VM2 and VM3)**: I also deployed two additional VMs named "Web-1" and "Web-2," both linked to the same resource group and VNet as the Jump Box.
-  - These web VMs were configured without public IPs, ensuring that they are only accessible from within the network.
+
+<img width="1208" alt="Web-1-AvailabilitySet" src="https://github.com/user-attachments/assets/d59122f5-d6b9-4bcc-a6c4-e39d3e5d730e">
+
+
+- These web VMs were configured without public IPs, ensuring that they are only accessible from within the network.
 
 <img width="806" alt="WebVMNetworking" src="https://github.com/user-attachments/assets/3da6aba7-769b-4cda-b736-2d1f995d5ee0">
 
