@@ -77,7 +77,7 @@ As described fully in the report, Digitech, Inc. made the following findings.
 
 ## Voicemail Evidence
 
-Here is a voicemail confirming the third collaborator that can be accessed [here](https://drive.google.com/file/d/1JcYNHmxvgwl6CFGtyANeFWPKIlRuhx9s/view?usp=sharing):
+Here is a voicemail confirming the third collaborator that can be accessed [here](https://drive.google.com/file/d/1JcYNHmxvgwl6CFGtyANeFWPKIlRuhx9s/view?usp=sharing):{:target="_blank"}
 
 > "Hi Peter, it's me your buddy Oliver. From my math, you and Rosie have cleared over 125k. Remember though? I get 20% and I'll keep clearing the audit records so Evelyn can never catch you. Give me my cash though. Put it in an envelope. Leave it at my back door. Pleasure doing business with you...."
 
@@ -87,7 +87,7 @@ Oliver expects a 20% cut of the earnings and prefers to receive payment in cash.
 
 ## Video Evidence
 
-A video here shows an envelope of cash left at Oliver's back door: [Link to Video](https://drive.google.com/file/d/1vuo2_g3LFkwznRk96B0xuB5eoFiA6fjO/view?usp=sharing)
+A video here shows an envelope of cash left at Oliver's back door: [Link to Video](https://drive.google.com/file/d/1vuo2_g3LFkwznRk96B0xuB5eoFiA6fjO/view?usp=sharing){:target="_blank"}
 
 ## Email Evidence
 
