@@ -418,7 +418,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   ```
   nano /etc/ansible/ansible.cfg
   ```
-- I scrolled to the `remote_user` option, uncommented it, and set it to my administrator username:
+- I scrolled to the `remote_user` option, uncommented it, and set it to my administrator username "sysadmin":
   
   ```
   # What flags to pass to sudo
