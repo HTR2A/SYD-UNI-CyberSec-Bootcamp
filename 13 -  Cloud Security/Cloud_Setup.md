@@ -177,6 +177,242 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 
 
+**Step-by-Step Guide for Setting Up Azure VM with Ansible from Jump Box**
+
+1. **Launch a New VM in Azure Portal**:
+
+   - Access the Azure portal and launch a new Virtual Machine (VM).
+   - Configure the VM to only allow SSH access using a new SSH key generated from a container running in your jump box.
+
+2. **Connect to Ansible Container**:
+
+   - From your jump box, connect to the Ansible container.
+   - Run the following command to list Docker containers and find your Ansible container:
+     ```
+     sudo docker container list -a
+     ```
+   - Use the command below to start and connect to your Ansible container:
+     ```
+     docker run -it cyberxsecurity/ansible /bin/bash
+     ```
+   - Your prompt should change to reflect the container’s shell environment.
+
+3. **Generate a New SSH Key**:
+
+   - Once inside the Ansible container, run the following command to create a new SSH key:
+     ```
+     ssh-keygen -t rsa
+     ```
+
+   ```
+   ~root@23b86e1d62ad:~# ssh-keygen -t rsa
+
+   Generating public/private rsa key pair.
+
+   Enter file in which to save the key (/root/.ssh/id_rsa):
+
+   Created directory '/root/.ssh'.
+
+   Enter passphrase (empty for no passphrase):
+
+   Enter same passphrase again:
+
+   Your identification has been saved in /root/.ssh/id_rsa.
+
+   Your public key has been saved in /root/.ssh/id_rsa.pub.
+
+   The key fingerprint is:
+
+   SHA256:gzoKliTqbxvTFhrNU7ZwUHEx7xAA7MBPS2Wq3HdJ6rw root@23b86e1d62ad
+
+   The key's randomart image is:
+
+   +---[RSA 2048]----+
+
+   |  . .o+*o=.      |
+
+   |   o ++ . +      |
+
+   |    *o.+ o .     |
+   |  . =+=.+ +      |
+
+   |.. + *.+So .     |
+
+   |+ . +.* ..       |
+
+   |oo +oo o         |
+
+   |o. o+.  .        |
+
+   | .+o.  E         |
+
+   +----[SHA256]-----+
+
+   root@23b86e1d62ad:~#
+   ```
+
+   - Accept the default location for saving the key (`/root/.ssh/id_rsa`) and leave the passphrase empty.
+
+   - Verify that the key pair was created by listing the files in the `.ssh` directory:
+
+     ```
+     ls .ssh/
+     ```
+
+   - Display the public key to copy it:
+
+     ```
+     cat .ssh/id_rsa.pub
+     ```
+
+   ```
+   root@23b86e1d62ad:~# cat .ssh/id_rsa.pub
+   ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDz5KX3urPPKbYRKS3J06wyw5Xj4eZRQTcg6u2LpnSsXwPWYBpCdF5lE3tJlbp7AsnXlXpq2G0oAy5dcLJX2anpfaEBTEvZ0mFBS24AdNnF3ptan5SmEM/
+
+   ```
+
+4. **Update Azure VM with the New SSH Key**:
+
+   - Go back to the Azure portal.
+   - Locate your newly created Web VM's details page.
+   - Reset the SSH public key for the VM by pasting in the public key generated from the Ansible container.
+
+5. **Retrieve Internal IP Address**:
+
+   - From the Azure portal, get the internal IP address of your VM.
+
+![reset-ssh](https://github.com/user-attachments/assets/15a66cc0-c63f-4707-aa90-396073456804)
+
+
+6. **Test SSH Connection to the VM**:
+
+   - In your Ansible container, attempt to connect to the VM using the internal IP address:
+     ```
+     ssh ansible@<internal-ip>
+     ```
+   - Accept the authenticity of the host by typing "yes" when prompted.
+   - The connection was successful, we see a welcome message from the Ubuntu system.
+
+```
+root@23b86e1d62ad:~# ping 10.0.0.6
+PING 10.0.0.6 (10.0.0.6) 56(84) bytes of data.
+^C
+--- 10.0.0.6 ping statistics ---
+4 packets transmitted, 0 received, 100% packet loss, time 3062ms
+
+root@23b86e1d62ad:~#
+
+```
+
+```
+root@23b86e1d62ad:~# ssh ansible@10.0.0.6
+The authenticity of host '10.0.0.6 (10.0.0.6)' can't be established.
+ECDSA key fingerprint is SHA256:7Wd1cStyhq5HihBf+7TQgjIQe2uHP6arx2qZ1YrPAP4.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.0.0.6' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-1027-azure x86_64)
+
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+
+System information as of Mon Jan  6 18:49:56 UTC 2020
+
+System load:  0.01              Processes:           108
+Usage of /:   4.1% of 28.90GB   Users logged in:     0
+Memory usage: 36%               IP address for eth0: 10.0.0.6
+Swap usage:   0%
+
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Mon Jan  6 18:33:30 2020 from 10.0.0.4
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ansible@Pentest-1:~$
+
+```
+
+
+
+- To exit the SSH session, run:
+  ```
+  exit
+  ```
+7. **Update Ansible Hosts File**:
+  - Locate the Ansible hosts file in the container:
+    ```
+    ls /etc/ansible/
+    ```
+  - Open the hosts file with `nano` to edit:
+    ```
+    nano /etc/ansible/hosts
+    ```
+  - Uncomment the `[webservers]` header.
+  - Add the internal IP address of your VM under the `[webservers]` header along with the Python interpreter line:
+    ```
+    10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+    ```
+
+Output
+
+```
+    # This is the default ansible 'hosts' file.
+    #
+    # It should live in /etc/ansible/hosts
+    #
+    #   - Comments begin with the '#' character
+    #   - Blank lines are ignored
+    #   - Groups of hosts are delimited by [header] elements
+    #   - You can enter hostnames or ip addresses
+    #   - A hostname/ip can be a member of multiple groups
+    # Ex 1: Ungrouped hosts, specify before any group headers.
+
+    ## green.example.com
+    ## blue.example.com
+    ## 192.168.100.1
+    ## 192.168.100.10
+
+    # Ex 2: A collection of hosts belonging to the 'webservers' group
+
+    [webservers]
+    ## alpha.example.org
+    ## beta.example.org
+    ## 192.168.1.100
+    ## 192.168.1.110
+    10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+			10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+    
+```
+
+8. **Update Ansible Configuration File**:
+
+   - Open the Ansible configuration file to specify the default SSH user:
+     ```
+     nano /etc/ansible/ansible.cfg
+     ```
+   - Scroll to the `remote_user` option, uncomment it, and set it to your administrator username:
+     ```
+     remote_user = sysadmin
+     ```
+
+9. **Test Ansible Connection**:
+
+   - Run the following Ansible command to test the connection to your configured hosts:
+     ```
+     ansible all -m ping
+     ```
+   - If configured correctly, you should see output indicating a successful connection, similar to:
+     ```
+     10.0.0.6 | SUCCESS => {
+       "changed": false,
+       "ping": "pong"
+     }
+     ```
+
 
 
 
