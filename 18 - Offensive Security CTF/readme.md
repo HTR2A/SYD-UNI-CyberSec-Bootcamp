@@ -9,5 +9,6 @@ Find and exfiltrate any sensitive information within the domain.
 Escalate privileges.
 Compromise several machines.
 
-The report is here in this repository: <a href="[https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/16%20-%2017%20Penetration%20Testing%20(Linux%20%26%20Windows)/PenTest%20Report_Jason%20King.pdf](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/18%20-%20Offensive%20Security%20CTF/JASON%20KING%20-%20Rekall%20Penetration%20Test%20Report.pdf)">Rekall PenTest Report by Jason King</a>
+The report is here in this repository: <a href="https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/18%20-%20Offensive%20Security%20CTF/JASON%20KING%20-%20Rekall%20Penetration%20Test%20Report.pdf">Rekall PenTest Report by Jason King</a>
+
 
