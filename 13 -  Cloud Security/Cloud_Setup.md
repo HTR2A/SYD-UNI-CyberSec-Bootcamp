@@ -447,10 +447,15 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   ansible all -m ping
   ```
 - I saw output indicating a successful connection:
+
   ```
+  10.0.0.5 | SUCCESS => {
+  "changed": false, 
+  "ping": "pong"
+  }
   10.0.0.6 | SUCCESS => {
-    "changed": false,
-    "ping": "pong"
+		"changed": false, 
+		"ping": "pong"
   }
   ```
 
