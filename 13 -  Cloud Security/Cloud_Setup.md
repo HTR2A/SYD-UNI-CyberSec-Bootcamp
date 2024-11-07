@@ -721,7 +721,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 - I opened a web browser and entered the frontend IP address for my load balancer with `/setup.php` added to the IP address.
   - For example: `http://40.122.71.120/setup.php`
  
-<img width="1135" alt="DVWA-Test" src="https://github.com/user-attachments/assets/a55bc6a8-f4f7-4c59-896a-c7519b03c36d">
+![IP_LB_Inbound](https://github.com/user-attachments/assets/a55bc6a8-f4f7-4c59-896a-c7519b03c36d)
 
 
 ### Note
