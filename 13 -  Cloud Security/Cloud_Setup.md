@@ -378,3 +378,249 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   }
   ```
 
+
+## 8. Ansible Playbooks
+
+### Solution Guide: Ansible Playbooks
+
+My task was to create an Ansible playbook that installed Docker and configured a VM with the DVWA web app.
+
+### 1. Connect to Ansible Container
+
+- I connected to my jump box and then to the Ansible container.
+- If I had stopped or exited the container, I found it again using:
+  ```
+  docker container list -a
+  ```
+  ```
+  root@Red-Team-Web-VM-1:/home/RedAdmin# docker container list -a
+  CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS                         PORTS               NAMES
+  Exited (0) 2 minutes ago                           hardcore_brown
+  a0d78be636f7        cyberxsecurity/ansible:latest   "bash"                   3 days ago  
+  ```
+- I started the container again using:
+  ```
+  docker start hardcore_brown
+  ```
+  ```
+  root@Red-Team-Web-VM-1:/home/RedAdmin# docker start hardcore_brown
+  hardcore_brown
+  ```
+- I got a shell in my container using:
+  ```
+  docker attach hardcore_brown
+  ```
+  ```
+  root@Red-Team-Web-VM-1:/home/RedAdmin# docker attach hardcore_brown
+  root@1f08425a2967:~#
+  ```
+
+### 2. Create a YAML Playbook File
+
+- I created a YAML playbook file for the configuration:
+  ```
+  nano /etc/ansible/pentest.yml
+  ```
+- The top of my YAML file read:
+  ```
+  ---
+  - name: Config Web VM with Docker
+    hosts: webservers
+    become: true
+    tasks:
+  ```
+
+### 3. Uninstall Apache if Needed
+
+- DVWA runs on port 80, so I needed to remove Apache if it was installed:
+  ```
+  - name: Uninstall apache if needed
+    ansible.builtin.apt:
+      update_cache: yes
+      name: apache2
+      state: absent
+  ```
+
+### 4. Install Docker and Python3-pip
+
+- I used the Ansible `builtin.apt` module to install Docker and Python3-pip:
+  ```
+  - name: docker.io
+    ansible.builtin.apt:
+      update_cache: yes
+      name: docker.io
+      state: present
+
+  - name: Install pip3
+    ansible.builtin.apt:
+      force_apt_get: yes
+      name: python3-pip
+      state: present
+  ```
+
+### 5. Install Python Docker Module
+
+- I used the Ansible `pip` module to install Docker:
+  ```
+  - name: Install Python Docker module
+    pip:
+      name: docker
+      state: present
+  ```
+
+### 6. Install DVWA Docker Container
+
+- I used the Ansible `docker_container` module to install the DVWA container, ensuring port 80 was published:
+  ```
+  - name: download and launch a docker web container
+    docker_container:
+      name: dvwa
+      image: cyberxsecurity/dvwa
+      state: started
+      restart_policy: always
+      published_ports: 80:80
+  ```
+
+### 7. Enable Docker Service
+
+- I used the `systemd` module to ensure Docker starts when the machine reboots:
+  ```
+  - name: Enable docker service
+    systemd:
+      name: docker
+      enabled: yes
+  ```
+
+### 8. Run Ansible Playbook
+
+- My final playbook looked like this:
+
+  ```
+  ---
+  - name: Config Web VM with Docker
+    hosts: webservers
+    become: true
+    tasks:
+
+      - name: Uninstall apache if needed
+        ansible.builtin.apt:
+          update_cache: yes
+          name: apache2
+          state: absent
+
+      - name: docker.io
+        ansible.builtin.apt:
+          update_cache: yes
+          name: docker.io
+          state: present
+
+      - name: Install pip3
+        ansible.builtin.apt:
+          force_apt_get: yes
+          name: python3-pip
+          state: present
+
+      - name: Install Docker python module
+        pip:
+          name: docker
+          state: present
+
+      - name: download and launch a docker web container
+        docker_container:
+          name: dvwa
+          image: cyberxsecurity/dvwa
+          state: started
+          published_ports: 80:80
+
+      - name: Enable docker service
+        systemd:
+          name: docker
+          enabled: yes
+  ```
+
+- I ran the playbook using:
+
+  ```
+  ansible-playbook /etc/ansible/pentest.yml
+  ```
+
+- The output was:
+
+  ```
+  PLAY [Config Web VM with Docker] ***************************************************************
+
+  TASK [Gathering Facts] *************************************************************************
+  ok: [10.0.0.6]
+
+  TASK [Uninstall apache if needed] **************************************************************
+  changed: [10.0.0.6]
+
+  TASK [docker.io] *******************************************************************************
+  [WARNING]: Updating cache and auto-installing missing dependency: python-apt
+
+  changed: [10.0.0.6]
+
+  TASK [Install pip3] *****************************************************************************
+  changed: [10.0.0.6]
+
+  TASK [Install Docker python module] ************************************************************
+  changed: [10.0.0.6]
+
+  TASK [download and launch a docker web container] **********************************************
+  changed: [10.0.0.6]
+
+  PLAY RECAP *************************************************************************************
+  10.0.0.6                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+  ```
+
+### 9. Test DVWA
+
+- To test that DVWA was running on the new VM, I SSHed to the new VM from the Ansible container:
+  ```
+  ssh sysadmin@10.0.0.6
+  ```
+  ```
+  Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-1027-azure x86_64)
+
+  * Documentation:  https://help.ubuntu.com
+  * Management:     https://landscape.canonical.com
+  * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Jan  6 20:01:03 UTC 2020
+
+  System load:  0.01              Processes:              122
+  Usage of /:   9.9% of 28.90GB   Users logged in:        0
+  Memory usage: 58%               IP address for eth0:    10.0.0.6
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+
+  18 packages can be updated.
+  0 updates are security updates.
+
+  Last login: Mon Jan  6 19:33:51 2020 from 10.0.0.4
+  ```
+- I ran the following command to test the connection:
+  ```
+  curl localhost/setup.php
+  ```
+- If everything was working, I received some HTML from the DVWA container:
+  ```
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+      <title>Setup :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>
+
+      <link rel="stylesheet" type="text/css" href="dvwa/css/main.css" />
+
+      <link rel="icon" type="\image/ico" href="favicon.ico" />
+
+      <script type="text/javascript" src="dvwa/js/dvwaPage.js"></script>
+
+    </head>
+  ```
+
+
+
