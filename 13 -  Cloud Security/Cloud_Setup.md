@@ -652,7 +652,6 @@ My task was to create an Ansible playbook that installed Docker and configured a
   10.0.0.6                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
 
-
 I tested that DVWA is running on my new VM and SSH'd to the new VM from my Ansible container.
 
 ```
@@ -702,56 +701,8 @@ ansible@Pentest-1:~$ curl localhost/setup.php
 </head>
 ```
 
-### 9. Test DVWA
 
-- To test that DVWA was running on the new VM, I SSHed to the new VM from the Ansible container:
-  ```
-  ssh sysadmin@10.0.0.6
-  ```
-  ```
-  Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-1027-azure x86_64)
-
-  * Documentation:  https://help.ubuntu.com
-  * Management:     https://landscape.canonical.com
-  * Support:        https://ubuntu.com/advantage
-
-  System information as of Mon Jan  6 20:01:03 UTC 2020
-
-  System load:  0.01              Processes:              122
-  Usage of /:   9.9% of 28.90GB   Users logged in:        0
-  Memory usage: 58%               IP address for eth0:    10.0.0.6
-  Swap usage:   0%                IP address for docker0: 172.17.0.1
-
-  18 packages can be updated.
-  0 updates are security updates.
-
-  Last login: Mon Jan  6 19:33:51 2020 from 10.0.0.4
-  ```
-- I ran the following command to test the connection:
-  ```
-  curl localhost/setup.php
-  ```
-- If everything was working, I received some HTML from the DVWA container:
-  ```
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-  <html xmlns="http://www.w3.org/1999/xhtml">
-
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-      <title>Setup :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>
-
-      <link rel="stylesheet" type="text/css" href="dvwa/css/main.css" />
-
-      <link rel="icon" type="\image/ico" href="favicon.ico" />
-
-      <script type="text/javascript" src="dvwa/js/dvwaPage.js"></script>
-
-    </head>
-  ```
-
-## 9. Load Balancer
+## 8. Load Balancer
 
 My task was to install a load balancer in front of the VM to distribute the traffic among more than one VM.
 
