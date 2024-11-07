@@ -462,8 +462,6 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 ## 8. Ansible Playbooks
 
-### Solution Guide: Ansible Playbooks
-
 My task was to create an Ansible playbook that installed Docker and configured a VM with the DVWA web app.
 
 ### 1. Connect to Ansible Container
@@ -511,7 +509,7 @@ My task was to create an Ansible playbook that installed Docker and configured a
     tasks:
   ```
 
-### 3. Uninstall Apache if Needed
+### 3. Uninstall Apache
 
 - DVWA runs on port 80, so I needed to remove Apache if it was installed:
   ```
