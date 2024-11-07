@@ -109,7 +109,7 @@ To ensure secure management of the cloud environment, I added a rule to the Netw
 
 <img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
 
-### 6 Detailed Docker Container Setup
+### 6. Docker Container Setup
 
 After initial configuration, I proceeded with setting up Docker on the Jump Box to manage containers effectively. Here is how I did it:
 
