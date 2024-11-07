@@ -174,7 +174,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 
 
-## **Provisioners**
+## 7. Provisioner Setup
 
 1. **Launch a New VM in Azure Portal**:
 
