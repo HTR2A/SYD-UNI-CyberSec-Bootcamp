@@ -1,4 +1,4 @@
-Here's a summary of what I learned from the second SIEM module:
+# Here's a summary of what I learned from the second SIEM module:
 
 ---
 
@@ -18,5 +18,7 @@ One takeaway was the importance of being prepared for potential delays when regi
 I am excited to apply these new skills as we move into the Forensics module next week, where I will explore how incident response and digital evidence collection are conducted.
 
 This module has equipped me with valuable resources, including Splunk's visualization and dashboard tutorials, and insights into its advanced security software. Overall, I feel more confident in using SIEM tools and understanding their role in maintaining an organization's security resilience.
+![splunk](https://github.com/user-attachments/assets/4cd9ac88-6210-43bb-a04b-8c9a44ec19b1)
 
 --- 
+
