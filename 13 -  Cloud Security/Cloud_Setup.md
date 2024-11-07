@@ -137,7 +137,7 @@ The goal of this activity was to create a security group rule to allow SSH conne
     - **Name**: Named the rule appropriately, such as "SSH".
     - **Description**: Wrote a short description like "Allow SSH from my IP".
    
-- <img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
+<img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
 
 ### 4. SSH to the VM for Administration
 
@@ -165,6 +165,7 @@ Please note that my public IP address will change depending on my location.
 
 **Note**: If I needed to reset my SSH key, I could do so on the VM details page by selecting **Reset Password** on the left-hand column.
 
+![password-reset](https://github.com/user-attachments/assets/0f09e0b4-22a5-44eb-93d8-d838d912f126)
 
 
 ### 6. Docker Container Setup
