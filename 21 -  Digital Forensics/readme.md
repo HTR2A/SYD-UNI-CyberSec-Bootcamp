@@ -87,7 +87,7 @@ Oliver expects a 20% cut of the earnings and prefers to receive payment in cash.
 
 ## Video Evidence
 
-A video here shows an envelope of cash left at Oliver's back door: [Link to Video](https://drive.google.com/file/d/1vuo2_g3LFkwznRk96B0xuB5eoFiA6fjO/view?usp=sharing){:target="_blank"}
+A video here shows an envelope of cash left at Oliver's back door: [Link to Video](https://drive.google.com/file/d/1vuo2_g3LFkwznRk96B0xuB5eoFiA6fjO/view?usp=sharing) target="_blank"
 
 ## Email Evidence
 
