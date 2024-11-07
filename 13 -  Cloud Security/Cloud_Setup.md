@@ -89,7 +89,6 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGG6dBJ6ibhgM09U+kn/5NE7cGc4CNHWXein0f+Mci
 ```
 
 <img width="816" alt="Jump_box-VM" src="https://github.com/user-attachments/assets/595ffb43-8e90-4ac2-b186-1d7f23a4366a">
-<img width="1252" alt="CreateVM-b" src="https://github.com/user-attachments/assets/24b52a09-1dae-4b27-8ae2-eadec368c8d3">
 
 
 
