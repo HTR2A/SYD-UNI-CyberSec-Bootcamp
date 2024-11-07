@@ -102,15 +102,70 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGG6dBJ6ibhgM09U+kn/5NE7cGc4CNHWXein0f+Mci
 <img width="806" alt="WebVMNetworking" src="https://github.com/user-attachments/assets/3da6aba7-769b-4cda-b736-2d1f995d5ee0">
 
 
-### 5. Adding Security Group Rules for the Jump Box
+## 5. Jump Box Administration
 
-To ensure secure management of the cloud environment, I added a rule to the Network Security Group to allow SSH access from my current IP address.
+The goal of this activity was to create a security group rule to allow SSH connections only from my current IP address and to connect to the new virtual machine for management.
 
-- **Inbound Security Rule**: Configured to allow SSH traffic from my IP address only, using port 22 and TCP protocol.
+### 1. Find My IP Address
+
+- First, I found my IP address by opening the terminal and entering the command:
+  ```
+  curl icanhazip.com
+  ```
+  - Alternatively, I could google "What's my IP address?"
+
+### 2. Log into Azure Portal
+
+- I logged into `portal.azure.com` to create a security group rule that allows SSH connections from my current IP address.
+
+### 3. Create a Security Group Rule
+
+- I found my security group listed under my resource group.
+- I created a rule allowing SSH connections from my IP address by following these steps:
+  - On the left, I selected **Inbound security rules**.
+  - I clicked **+ Add** to add a rule.
+  - I configured the rule as follows:
+    - **Source**: Set to "My IP address".
+      - Note: I verified that the IP address shown matched the address from step 1.
+    - **Source Port Ranges**: Set to "Any".
+    - **Destination**: Set to "Service Tag/Virtual Network", but a better setting was to specify the internal IP of my jump box to really limit this traffic.
+    - **Service**: Set to "SSH".
+    - **Destination Port Ranges**: Defaulted to port 22 as I selected SSH for the service.
+    - **Protocol**: Defaulted to TCP.
+    - **Action**: Set to "Allow".
+    - **Priority**: Set to a lower number than my rule to deny all traffic (i.e., less than 4,096).
+    - **Name**: Named the rule appropriately, such as "SSH".
+    - **Description**: Wrote a short description like "Allow SSH from my IP".
+   
+- <img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
+
+### 4. SSH to the VM for Administration
+
+- I used my command line to SSH to the VM for administration. Windows users should use GitBash.
+- The command to connect was:
+  ```
+  ssh admin-username@VM-public-IP
+  ```
+  - I used the username I had previously set up. My SSH key was used automatically.
+- The first time I connected, I needed to type "yes" to add the machine to my list of known hosts.
+
+### 5. Check Sudo Permissions
+
+- Once connected, I checked my sudo permissions by running the command:
+  ```
+  sudo -l
+  ```
+  - I noticed that my admin user had full sudo permissions without requiring a password.
+
+### Note
+
+Please note that my public IP address will change depending on my location.
+- In a normal work environment, I would set up a static IP address to avoid continually creating rules to allow access to my cloud machine.
+- In my case, I would need to create another security rule to allow my home network to access my Azure VM.
+
+**Note**: If I needed to reset my SSH key, I could do so on the VM details page by selecting **Reset Password** on the left-hand column.
 
 
-
-<img width="293" alt="limit-ip-ssh" src="https://github.com/user-attachments/assets/24f2ae14-3c2e-41a1-bfd7-f67f3eb3dd14">
 
 ### 6. Docker Container Setup
 
