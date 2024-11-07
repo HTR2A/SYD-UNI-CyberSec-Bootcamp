@@ -22,6 +22,7 @@ The recovery process took approximately **9 hours**. During this time, several c
 The report includes a screenshot of the Splunk dashboard that shows the timeline of the attack, highlighting the spike in malicious activity and the sequence of events leading to the breach.
 
 ![Screenshot 2024-09-27 at 15 26 16](https://github.com/user-attachments/assets/36fba758-18d2-4131-b860-5ed7fc253269)
+
 ![Screenshot 2024-09-27 at 16 33 30](https://github.com/user-attachments/assets/95a10da7-1598-41db-aab8-2b74c1460b96)
 
 ### Step 2: Assessing Vulnerabilities
@@ -38,11 +39,17 @@ Screenshots are provided to demonstrate the creation of the alert in Splunk. The
 - **Alert Trigger**: The configuration showing the actions taken when the alert is triggered, such as sending email notifications to the security team and logging the event for further analysis.
   
 ![Screenshot 2024-09-27 at 15 35 50](https://github.com/user-attachments/assets/18d9f520-1808-4abe-8b96-bac7ace57348)
+
 ![Screenshot 2024-09-27 at 15 38 12](https://github.com/user-attachments/assets/0563a105-fd67-4adf-a1f5-73c60a6e36d9)
+
 ![Screenshot 2024-09-27 at 15 44 41](https://github.com/user-attachments/assets/f7a0283e-ae3a-4df8-a454-58c84fd97453)
+
 ![Screenshot 2024-09-27 at 15 44 41](https://github.com/user-attachments/assets/c0cd907a-696e-4bb2-be54-b59a5ea7f8c7)
+
 ![Screenshot 2024-09-27 at 15 44 46](https://github.com/user-attachments/assets/58a34868-9da9-4687-9ef9-1d4f2305e687)
+
 ![Screenshot 2024-09-27 at 15 44 58](https://github.com/user-attachments/assets/4b1906ea-a35a-4be7-ae1f-69804c69c78f)
+
 ![Screenshot 2024-09-27 at 15 45 23](https://github.com/user-attachments/assets/27dc3e78-3ef3-419d-b3be-e9eeaabf0ca7)
 
 
