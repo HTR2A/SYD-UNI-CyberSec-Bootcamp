@@ -177,7 +177,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 
 
-**Step-by-Step Guide for Setting Up Azure VM with Ansible from Jump Box**
+## b**Provisioners**
 
 1. **Launch a New VM in Azure Portal**:
 
