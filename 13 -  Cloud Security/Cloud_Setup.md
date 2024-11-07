@@ -652,6 +652,56 @@ My task was to create an Ansible playbook that installed Docker and configured a
   10.0.0.6                   : ok=5    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
   ```
 
+
+I tested that DVWA is running on my new VM and SSH'd to the new VM from my Ansible container.
+
+```
+root@1f08425a2967:~# ssh sysadmin@10.0.0.6
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 5.0.0-1027-azure x86_64)
+
+* Documentation:  https://help.ubuntu.com
+* Management:     https://landscape.canonical.com
+* Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Jan  6 20:01:03 UTC 2020
+
+  System load:  0.01              Processes:              122
+  Usage of /:   9.9% of 28.90GB   Users logged in:        0
+  Memory usage: 58%               IP address for eth0:    10.0.0.6
+  Swap usage:   0%                IP address for docker0: 172.17.0.1
+
+
+18 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Mon Jan  6 19:33:51 2020 from 10.0.0.4
+```
+
+
+I ran: ```curl localhost/setup.php``` to test if everything was working, and I got back some HTML from the DVWA container.
+
+```
+ansible@Pentest-1:~$ curl localhost/setup.php
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Setup :: Damn Vulnerable Web Application (DVWA) v1.10 *Development*</title>
+
+    <link rel="stylesheet" type="text/css" href="dvwa/css/main.css" />
+
+    <link rel="icon" type="\image/ico" href="favicon.ico" />
+
+    <script type="text/javascript" src="dvwa/js/dvwaPage.js"></script>
+
+</head>
+```
+
 ### 9. Test DVWA
 
 - To test that DVWA was running on the new VM, I SSHed to the new VM from the Ansible container:
