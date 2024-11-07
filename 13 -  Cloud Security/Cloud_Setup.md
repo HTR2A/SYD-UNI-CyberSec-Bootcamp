@@ -228,7 +228,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 
 <img width="1349" alt="VM_IP_Address" src="https://github.com/user-attachments/assets/7e894409-b4f1-41ed-b6de-3572814e6783">
-<img width="609" alt="JumpBox_settings1" src="https://github.com/user-attachments/assets/09457d2c-7c7f-4784-b575-229d31728114">
+<img width="500" alt="JumpBox_settings1" src="https://github.com/user-attachments/assets/09457d2c-7c7f-4784-b575-229d31728114">
 
 ## 7. Provisioner Setup
 
