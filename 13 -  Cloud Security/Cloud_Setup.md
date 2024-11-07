@@ -419,8 +419,25 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   nano /etc/ansible/ansible.cfg
   ```
 - I scrolled to the `remote_user` option, uncommented it, and set it to my administrator username:
+  
   ```
+  # What flags to pass to sudo
+  # WARNING: leaving out the defaults might create unexpected behaviours
+  #sudo_flags = -H -S -n
+
+  # SSH timeout
+  #timeout = 10
+
+  # default user to use for playbooks if user is not specified
+  # (/usr/bin/ansible will use current user as default)
   remote_user = sysadmin
+
+  # logging is off by default unless this path is defined
+  # if so defined, consider logrotate
+  #log_path = /var/log/ansible.log
+
+  # default module name for /usr/bin/ansible
+  #module_name = command
   ```
 
 ### 9. Test Ansible Connection
