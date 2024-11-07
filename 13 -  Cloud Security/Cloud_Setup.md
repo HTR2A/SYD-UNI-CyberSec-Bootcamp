@@ -134,7 +134,6 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
     sudo systemctl start docker
     ```
 
-*Insert Image Here*: **Screenshot showing Docker installation and service status on the Jump Box.**
 <img width="972" alt="Docker_Install" src="https://github.com/user-attachments/assets/5bf576fe-f90f-44be-91ec-3e95057c9d89">
 
 
@@ -145,7 +144,6 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   ```
   - This command downloaded the "cyberxsecurity/ansible" container from Docker Hub.
 
-*Insert Image Here*: **Screenshot of the terminal showing the Docker image pull process.**
 <img width="1392" alt="Docker_Process" src="https://github.com/user-attachments/assets/b2cbfdff-e4be-4c74-89c1-da23496dcd94">
 <img width="857" alt="Docker_Pull" src="https://github.com/user-attachments/assets/ffc52ba4-10da-44e1-a076-a3c30f82c133">
 
@@ -156,7 +154,6 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   ```
   - The `-ti` flag allowed me to open an interactive terminal to work inside the container.
 
-*Insert Image Here*: **Screenshot showing the running Docker container with an interactive terminal session.**
 <img width="1162" alt="Container_Connected" src="https://github.com/user-attachments/assets/fe36363b-2b5a-4a3a-874a-1ff80f6b98ca">
 
 
@@ -170,14 +167,14 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
   - **Action**: Allow traffic.
   - **Priority**: Set to a lower number to ensure the rule has precedence.
 
-*Insert Image Here*: **Screenshot of the Network Security Group settings, showing the SSH rule added for the Jump Box.**
+
 <img width="1349" alt="VM_IP_Address" src="https://github.com/user-attachments/assets/7e894409-b4f1-41ed-b6de-3572814e6783">
 <img width="209" alt="JumpBox_settings1" src="https://github.com/user-attachments/assets/09457d2c-7c7f-4784-b575-229d31728114">
 
 
 
 
-## b**Provisioners**
+## **Provisioners**
 
 1. **Launch a New VM in Azure Portal**:
 
