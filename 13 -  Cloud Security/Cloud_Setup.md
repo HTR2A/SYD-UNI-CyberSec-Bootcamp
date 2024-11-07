@@ -625,6 +625,7 @@ My task was to create an Ansible playbook that installed Docker and configured a
 ## 9. Load Balancer
 
 My task was to install a load balancer in front of the VM to distribute the traffic among more than one VM.
+
 <img width="1390" alt="LBSearch" src="https://github.com/user-attachments/assets/56028867-74da-48f0-b8be-aa08966c5585">
 
 ### 1. Create a Load Balancer
@@ -632,6 +633,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 - I started by creating a new load balancer and assigning it a static IP address.
 - From the homepage, I searched for "load balancer" and created a new load balancer in my red team resource group.
 - I gave the load balancer a unique name.
+  
 ![CreateLB](https://github.com/user-attachments/assets/d650d0e0-0282-41d0-b691-983c70d44367)
 
 
@@ -640,6 +642,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 - I added a frontend IP address to the load balancer.
 - I provided a unique name for the IP address. This name was used to create a URL that mapped to the load balancer's IP address.
 - I created a new public IP address.
+  
 ![AddIP](https://github.com/user-attachments/assets/e40be2d3-9972-44af-bb09-c3e92940ce72)
 
 
@@ -647,6 +650,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 
 - I added a backend pool to the load balancer.
 - I included my Web VMs in the backend pool.
+  
 ![backendPool](https://github.com/user-attachments/assets/3881e149-4022-4a80-b9df-5a80ae5ab5a1)
 ![backendpool2](https://github.com/user-attachments/assets/97e6f2f8-9b5f-492a-8f24-c1cfc707ea27)
 
@@ -658,6 +662,7 @@ My task was to install a load balancer in front of the VM to distribute the traf
 - On the left, I selected "Health Probes" and clicked "Add" to create a new health probe.
 - I gave the health probe a unique name, set the protocol to TCP, and used port 80.
 - I set the interval to 5 seconds.
+  
 ![HealthProbeSelect](https://github.com/user-attachments/assets/395f5ac9-1160-4ae8-9de6-ca15e394ffd4)
 ![HealthProbeSettings](https://github.com/user-attachments/assets/d81b0bb3-4ae8-49be-a13f-b912e9341940)
 
