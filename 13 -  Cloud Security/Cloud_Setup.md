@@ -323,7 +323,7 @@ After initial configuration, I proceeded with setting up Docker on the Jump Box 
 
 - In the Ansible container, I attempted to connect to the VM using the internal IP address:
   ```
-  ssh ansible@<internal-ip>
+  ssh ansible@10.0.0.6
   ```
 - I accepted the authenticity of the host by typing "yes" when prompted.
 - The connection was successful, and I saw a welcome message from the Ubuntu system.
