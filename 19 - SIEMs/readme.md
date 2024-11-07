@@ -71,11 +71,17 @@ The evidence includes screenshots showing the following:
 - **Alert Configuration**: The alert settings that specify the conditions under which the security team is notified of potential brute force activity.
   
 ![Screenshot 2024-09-27 at 15 50 22](https://github.com/user-attachments/assets/abde2179-23a0-4640-a324-5c64fbaec54f)
+
 ![Screenshot 2024-09-27 at 15 50 33](https://github.com/user-attachments/assets/32591847-21b0-4be7-86a2-8b415f02002e)
+
 ![Screenshot 2024-09-27 at 16 29 16](https://github.com/user-attachments/assets/442e4fbc-dd03-4cc3-958a-75401b24d844)
+
 ![Screenshot 2024-09-27 at 16 29 26](https://github.com/user-attachments/assets/e8519c11-576c-4c9b-9d3b-954218988649)
+
 ![Screenshot 2024-09-27 at 16 29 40](https://github.com/user-attachments/assets/b9fe5076-3086-49fa-98e8-c9632a300f48)
+
 ![Screenshot 2024-09-27 at 16 29 56](https://github.com/user-attachments/assets/eb4fcbb6-d043-4322-86eb-2e10ba7093be)
+
 ![Screenshot 2024-09-27 at 16 30 07](https://github.com/user-attachments/assets/10c88f0d-0f68-434d-9bdc-7bd412673793)
 
 
