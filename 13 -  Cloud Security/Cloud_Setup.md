@@ -624,8 +624,6 @@ My task was to create an Ansible playbook that installed Docker and configured a
 
 ## 9. Load Balancer
 
-### Solution Guide: Load Balancing
-
 My task was to install a load balancer in front of the VM to distribute the traffic among more than one VM.
 <img width="1390" alt="LBSearch" src="https://github.com/user-attachments/assets/56028867-74da-48f0-b8be-aa08966c5585">
 
