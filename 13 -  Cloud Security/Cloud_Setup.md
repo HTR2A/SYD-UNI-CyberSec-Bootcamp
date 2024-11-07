@@ -38,6 +38,9 @@ The Network Security Group (NSG) was set up to manage the flow of network traffi
 - Add the NSG to my resource group and provide it with a recognizable name.
 - Configured **inbound security rules** to block all traffic initially, then added specific rules for allowing certain types of traffic, such as SSH.
 
+**Security Note:** "Before removing the default deny-all rule, ensure that specific allow rules are configured and thoroughly tested to prevent unauthorized access to your virtual network. Removing this rule without proper security measures can expose your resources to potential threats."
+
+
 ![inbound_rules](https://github.com/user-attachments/assets/dff73cb6-4513-47a4-93b5-122aff7d6c8b)
 ![inbound_rules_2](https://github.com/user-attachments/assets/959525c6-0226-4beb-ac72-d740ef4ab8cd)
 
@@ -770,14 +773,14 @@ My task was to create a load balancer to distribute traffic across multiple VMs.
 
 - I created a new security group rule to allow port ```80``` traffic from the internet to my internal VNet.
 - I used the following settings:
-  - **Source**: Changed to my external ```IPv4``` address.
+  - **Source**: Set to a specific external ```IPv4``` address (e.g., your current IP) for more secure access. Avoid using 'Any' as this allows traffic from all sources, potentially increasing security risks. When setting the source to 'Any,' ensure you are aware of the potential security exposure. It's recommended to use a specific IP or a range of trusted IPs whenever possible to limit access and enhance security.
   - **Source Port Ranges**: Set to "**Any**" to allow any source port, as they are chosen at random by the source computer.
   - **Destination**: Set to "**VirtualNetwork**" to allow traffic to reach my Virtual Network.
   - **Destination Port Ranges**: Set to ```80``` to only allow port ```80``` traffic.
   - **Protocol**: Set to **TCP** or **Any**.
   - **Action**: Set to "**Allow**" to allow the traffic.
   - **Name**: I chose an appropriate name that I could recognize later.
- 
+
 
 ![IP_LB_Inbound](https://github.com/user-attachments/assets/1b584468-7d6a-42b2-80ef-b7485062b132)
 
