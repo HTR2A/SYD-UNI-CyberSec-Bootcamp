@@ -80,7 +80,6 @@ CUPS is a modular printing system for Unix-like OSes that enables computers to a
 
 <img width="773" alt="Screenshot 2024-10-24 at 11 23 31" src="https://github.com/user-attachments/assets/589a7ce9-18fc-42c7-8a6b-2a0ee3737331">
 
-
 ### Exploitation Process
 
 1. **Setup Malicious IPP Server**:
@@ -88,14 +87,17 @@ CUPS is a modular printing system for Unix-like OSes that enables computers to a
    - Used the `IPPServer` Python library to interact with CUPS.
 
 Downloading the Malicious Script
+
 <img width="593" alt="Screenshot 2024-10-24 at 11 31 35" src="https://github.com/user-attachments/assets/e3ff3679-51aa-4f91-b93d-02410695bd8d">
 
 <img width="520" alt="Screenshot 2024-10-24 at 11 31 22" src="https://github.com/user-attachments/assets/864c08a5-44d6-47c6-8f07-5887224acd5f">
 
 Installing requirments
+
 <img width="977" alt="Screenshot 2024-10-24 at 11 38 27" src="https://github.com/user-attachments/assets/5f3eb719-2287-4870-863f-27f5c6fd8d7f">
 
 Creating the virtual environment away from system python processes
+
 ![Virtual Environment Creation](https://github.com/user-attachments/assets/7110a70a-328f-4835-a157-118c069726aa)
 
 2. **Create a Malicious Printer**:
@@ -159,6 +161,8 @@ Creating the virtual environment away from system python processes
 - Analysed vulnerabilities and exploited `CVE-2024-47176`.
 - Set up a malicious IPP server with a crafted reverse shell payload.
 - Gained shell access and escalated privileges to root.
+
+[Exploitation Process](https://drive.google.com/file/d/1BOe27Jm-20F7AtCAszLgAiGIX7nwrTMv/view?usp=sharing)
 
 ---
 
