@@ -68,8 +68,7 @@ CUPS is a modular printing system for Unix-like OSes that enables computers to a
 - Provides a menu-driven interface to interactively run Nmap, Hydra, Gobuster, and Hashcat commands.
 - Handles user input for options like wordlists, IP addresses, and output handling.
 
-<img width="826" alt="Screenshot 2024-10-25 at 16 56 58" src="https://github.com/user-attachments/assets/1c4dd76a-cedb-4b0a-b4ef-181c6e69d732">
-
+<img width="790" alt="Screenshot 2024-11-08 at 12 20 14" src="https://github.com/user-attachments/assets/e57c34e5-161e-4028-9aff-23fbef499e2d">
 
 ---
 
