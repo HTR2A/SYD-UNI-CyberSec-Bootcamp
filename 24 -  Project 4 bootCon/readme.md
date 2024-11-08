@@ -1,6 +1,8 @@
 # Exploiting CUPS Vulnerabilities ft. “Pentest” Python Module
 
-## Presented by: Jason King and Liam Sainsbury
+## Presented by: Jason King and Liam Sainsbury 
+
+<a href="[https://github.com/HTR2A/PenTest-Python/blob/main/penetration.py](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/24%20-%20%20Project%204%20bootCon/JASON%20KING%20-%20%20bootCon%20Presentation.pdf)">Presentation</a>
 
 ### Exploit & Script by: Jason King
 
