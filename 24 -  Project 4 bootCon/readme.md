@@ -19,7 +19,7 @@ CUPS is a modular printing system for Unix-like OSes that enables computers to a
 - Web Interface
 - Cross-Platform Compatibility
 
-**Notable Quote**:
+**Notable Quote from Simone Margaritelli, the finder of the vulnerability**:
 > “I’ve been scanning the entire public internet IPv4 ranges several times a day for weeks, sending the UDP packet and logging whatever connected back. I’ve got back connections from hundreds of thousands of devices, with peaks of 200-300K concurrent clients.” - Simone Margaritelli
 
 ---
