@@ -5,6 +5,7 @@ In this project, I acted as a Security Operations Center (SOC) analyst for Virtu
 ### **Presentation to Senior Management**
 I compiled all my findings into a presentation for senior management, which can be accessed here: [Presentation](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/22%20-%20Building%20a%20Sec%20Monitoring%20Environment/JASON%20KING%20-%20Project%203%20Presentation.pdf)
 
+### **Report for Senior Management and technical Staff**
 The full report, which includes detailed analyses, screenshots of dashboards, and specific attack findings, can be accessed here: [Full Report](https://github.com/HTR2A/SYD-UNI-CyberSec-Bootcamp/blob/main/19%20-%20SIEMs/readme.md)
 
 ### **Day 1: Developing the Defensive Solution**
