@@ -85,5 +85,3 @@ The full report, which includes detailed analyses, screenshots of dashboards, an
 
 ---
 
-Does this level of detail capture everything you need, or is there any other area you’d like me to expand on?
-
