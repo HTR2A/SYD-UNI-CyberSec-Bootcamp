@@ -2,8 +2,6 @@
 
 ---
 
-## Step-by-Step Instructions
-
 ### Step 1: Ensure Permissions on Sensitive Files
 In this step, we verified and updated permissions for important system files to ensure security. The commands and required permissions were as follows:
 
